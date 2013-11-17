@@ -2,6 +2,19 @@ p#notice= notice
 p
   strong Title:
   = @post.title
+
+
+p
+  strong Category:
+  - if @post.category.present?
+  	= @post.category.title
+  - else
+  	| Not set
+
+p
+	strong Image:
+	= image_tag @post.photo.url(:medium)
+
 p
   strong Description:
   = @post.description

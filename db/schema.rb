@@ -11,17 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131116070251) do
+ActiveRecord::Schema.define(version: 20131117090810) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "posts", force: true do |t|
-    t.string   "title",                     null: false
-    t.text     "description"
-    t.integer  "price_per_day", default: 0
+  create_table "categories", force: true do |t|
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "posts", force: true do |t|
+    t.string   "title",                          null: false
+    t.text     "description"
+    t.integer  "price_per_day",      default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "category_id"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
 end

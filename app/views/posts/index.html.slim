@@ -5,7 +5,7 @@ table
       th Title
       th Description
       th Price per day
-      th
+      th Category
       th
       th
   tbody
@@ -14,6 +14,7 @@ table
         td= post.title
         td= post.description
         td= post.price_per_day
+        td= post.category_name
         td= link_to 'Show', post
         td= link_to 'Edit', edit_post_path(post)
         td= link_to 'Destroy', post, method: :delete, confirm: 'Are you sure?' 
